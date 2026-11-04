@@ -118,7 +118,7 @@ export default function WelcomePage() {
         marginBottom: '0.5rem',
         textAlign: 'center',
       }}>
-        Welcome, Recruit.
+        Welcome Aboard!
       </h1>
 
       {/* Intro paragraph */}
