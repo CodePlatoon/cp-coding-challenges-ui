@@ -116,7 +116,7 @@ export default function AuthPage() {
           color: 'rgba(255,255,255,0.55)',
           marginBottom: '3rem',
         }}>
-          Coding Assessment
+          Coding Challenges
         </div>
 
         {/* Mission steps */}
@@ -198,7 +198,7 @@ export default function AuthPage() {
             fontSize: '0.875rem',
             marginBottom: '2rem',
           }}>
-            {mode === 'login' ? 'Sign in to continue your assessment' : 'Start your coding assessment'}
+            {mode === 'login' ? 'Sign in to continue your coding challenges' : 'Start your coding challenges'}
           </p>
 
           <form onSubmit={handleSubmit} noValidate>

@@ -5,25 +5,25 @@ import api from '../api/axios';
 const CARDS = [
   {
     title: 'Track Your Progress',
-    body: 'The bar at the top shows all 3 challenges. Your active challenge is highlighted in orange — completed steps stay lit, locked ones unlock as you advance.',
+    body: "You'll complete three coding challenges in order. The progress bar shows which challenge you're working on and which ones you've completed.",
     image: '/guide/1-your_progress.png',
     alt: 'Progress bar showing challenge 1 in progress and challenges 2 and 3 locked',
   },
   {
-    title: 'Read the Mini-Lesson',
-    body: 'Every challenge opens with a short Python lesson on the left. Read the examples carefully — your challenge is always a direct application of what the lesson covers.',
+    title: "Review the Lesson",
+    body: "Each challenge includes a short Python lesson on the left side of your screen. Read the lesson and examples before starting your challenge.",
     image: '/guide/2-lesson.png',
     alt: 'Lesson panel showing a Python code example',
   },
   {
-    title: 'Find Your Challenge',
-    body: 'At the bottom of the lesson is your specific task. It tells you exactly what to build — no guessing. Make sure you understand it before writing a single line.',
+    title: "Complete the Challenge",
+    body: "At the bottom of each lesson, you'll find instructions for what you need to build. Review them carefully before writing your code.",
     image: '/guide/3-challenge.png',
     alt: 'Lesson panel with the challenge task highlighted',
   },
   {
     title: 'Write & Run Your Code',
-    body: "Type your solution in the editor on the right. When you're ready, click 'Run Code' to test it. Retries are unlimited and your work saves automatically.",
+    body: "Use the editor on the right to write your solution. Click 'Run Code' to test your work. You can try as many times as needed. Once your solution passes, you'll move to the next challenge.",
     image: '/guide/4-code-editor.png',
     alt: 'Code editor with Run Code button highlighted',
   },
@@ -105,7 +105,7 @@ export default function WelcomePage() {
         color: 'rgba(255,255,255,0.5)',
         marginBottom: '2rem',
       }}>
-        Coding Assessment
+        Coding Challenges
       </div>
 
       {/* Welcome heading */}
@@ -118,7 +118,7 @@ export default function WelcomePage() {
         marginBottom: '0.5rem',
         textAlign: 'center',
       }}>
-        Welcome Aboard!
+        Application Coding Challenges
       </h1>
 
       {/* Intro paragraph */}
@@ -130,7 +130,11 @@ export default function WelcomePage() {
         lineHeight: 1.6,
         textAlign: 'center',
       }}>
-        Before you begin, here&apos;s what to expect from your assessment.
+        You're ready to complete the Coding Challenges portion of your Code Platoon application.
+        <br/><br/>
+        You'll work through three Python coding challenges designed to demonstrate your problem-solving skills and ability to follow instructions.
+        <br/><br/>
+        Complete each challenge successfully to unlock the next one. Once you've finished all three, you'll continue to the final section of Part Two, where you'll submit your written responses and video.
       </p>
 
       {/* What to Expect cards */}
@@ -194,9 +198,19 @@ export default function WelcomePage() {
             letterSpacing: '0.08em',
           }}
         >
-          {loading ? 'Loading…' : 'Start Assessment →'}
+          {loading ? 'Loading…' : 'Start Coding Challenges →'}
         </button>
       </div>
+      <p style={{
+        fontSize: '0.95rem',
+        color: 'rgba(255,255,255,0.6)',
+        marginBottom: '2rem',
+        maxWidth: 600,
+        lineHeight: 1.6,
+        textAlign: 'center',
+      }}>
+        Complete all three challenges to continue to the final section of your application.
+      </p>
     </div>
   );
 }

@@ -130,7 +130,7 @@ export default function ChallengePage() {
             textTransform: 'uppercase',
             opacity: 0.7,
           }}>
-            Challenge {current.challenge.order} / {challenges.length}
+            Challenge {challenges.indexOf(current)+1} / {challenges.length}
           </span>
         </div>
 

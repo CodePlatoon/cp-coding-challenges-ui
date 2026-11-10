@@ -33,8 +33,10 @@ export default function CongratsPage() {
     setSubmitting(true);
     setError('');
     try {
-      await api.patch('/api/user/complete/');
+      // await api.patch('/api/user/complete/');
       setSubmitted(true);
+      const targetUrl = 'https://launchyourcareer.codeplatoon.org/application-2';
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
     } catch (err) {
       const msg = err.response?.data?.detail || 'Something went wrong. Please try again.';
       setError(msg);
@@ -78,7 +80,7 @@ export default function CongratsPage() {
         justifyContent: 'center',
       }}>
         <div style={{ flex: 1, height: 1, background: 'rgba(59,127,130,0.4)' }} />
-        Assessment Complete
+        Coding Challenges Complete
         <div style={{ flex: 1, height: 1, background: 'rgba(59,127,130,0.4)' }} />
       </div>
 
@@ -94,7 +96,7 @@ export default function CongratsPage() {
         marginBottom: '0.75rem',
         textShadow: '0 0 60px rgba(80,119,55,0.35)',
       }}>
-        Mission<br />Complete
+        Coding Challenges<br />Complete
       </h1>
 
       {/* Accent subtitle */}
@@ -115,7 +117,7 @@ export default function CongratsPage() {
         maxWidth: 380,
         lineHeight: 1.6,
       }}>
-        You&apos;ve demonstrated the problem-solving skills we look for at Code Platoon.
+        You&apos;ve successfully completed all three Coding Challenges.
       </p>
 
       {/* Objective list */}
@@ -150,7 +152,7 @@ export default function CongratsPage() {
                 color: 'rgba(255,255,255,0.45)',
                 marginBottom: '0.1rem',
               }}>
-                Objective {i + 1}
+                Challenge {i + 1}
               </div>
               <div style={{
                 fontFamily: 'var(--font-heading)',
@@ -192,9 +194,11 @@ export default function CongratsPage() {
           flexDirection: 'column',
           gap: '0.5rem',
         }}>
-          <div style={{ fontSize: '1rem' }}>✓ Application submitted. We&apos;ll be in touch soon.</div>
+          <div style={{ fontSize: '1rem' }}>✓ Coding Challenges submitted.</div>
           <div style={{ fontSize: '0.875rem', opacity: 0.75, fontFamily: 'var(--font-body)', letterSpacing: '0.01em' }}>
-            Keep an eye on your email for next steps from the Code Platoon team.
+            Ensure to complete your written responses and video submission in <a href='https://launchyourcareer.codeplatoon.org/application-2' target="_blank">
+              <strong style={{color:'var(--color-orange)'}}>STEP 2</strong>
+            </a>
           </div>
         </div>
       ) : (
@@ -202,6 +206,13 @@ export default function CongratsPage() {
           {error && (
             <p style={{ color: '#ff8a65', fontSize: '0.875rem' }}>{error}</p>
           )}
+          <span style={{ fontSize: '0.78rem', opacity: 0.4, fontFamily: 'var(--font-heading)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <strong>You&apos;re almost finished with your application!</strong>
+            <br/><br/>
+            Next, you&apos;ll return to Part Two to complete your written responses and video submission. 
+            <br/>
+            Once those are submitted, your application will be complete.
+          </span>
           <button
             onClick={handleSubmit}
             disabled={submitting}
@@ -220,10 +231,10 @@ export default function CongratsPage() {
               borderRadius: '2px',
             }}
           >
-            {submitting ? 'Submitting…' : 'Submit Application'}
+            {submitting ? 'Submitting…' : 'Submit Coding Challenges →'}
           </button>
           <span style={{ fontSize: '0.78rem', opacity: 0.4, fontFamily: 'var(--font-heading)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-            This action cannot be undone
+            You&apos;ll continue to the final section of Part Two of your application.
           </span>
         </div>
       )}
